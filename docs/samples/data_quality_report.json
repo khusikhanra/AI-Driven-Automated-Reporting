@@ -1,0 +1,16 @@
+{
+  "input_rows": 541909,
+  "invalid_invoice_date_rows": 0,
+  "repaired_invoice_date_rows": 232959,
+  "dropped_missing_description": 1454,
+  "cancellation_rows": 9288,
+  "non_product_adjustment_rows": 2326,
+  "dropped_data_error_rows": 1052,
+  "clean_product_sales_rows": 527789,
+  "missing_customer_id_in_product_sales": 131452,
+  "pct_missing_customer_id": 24.91,
+  "rows_accounted_for": 541909,
+  "reconciliation_ok": true,
+  "historical_start": "2010-12-01 08:26:00",
+  "historical_end": "2011-12-09 12:50:00"
+}

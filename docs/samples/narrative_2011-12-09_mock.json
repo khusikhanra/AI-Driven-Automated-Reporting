@@ -1,0 +1,19 @@
+{
+  "narrative": {
+    "summary": "On 2011-12-09, revenue was £198,114.26 from 44 orders (median order value £317.38).",
+    "key_drivers": [
+      "Revenue was £198,114.26 across 44 orders.",
+      "'PAPER CRAFT , LITTLE BIRDIE' accounted for 85.0% of the day's revenue (£168,469.60).",
+      "Top product by revenue: PAPER CRAFT , LITTLE BIRDIE."
+    ],
+    "anomaly_explanation": "revenue was 12.87 standard deviations (above baseline).",
+    "recommendation": "Review the 'PAPER CRAFT , LITTLE BIRDIE' contribution before treating today's revenue as representative of typical demand."
+  },
+  "cost": {
+    "mode": "mock",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0
+  },
+  "generated_at": "2026-10-07T05:16:41.399656+00:00"
+}

@@ -1,0 +1,47 @@
+{
+  "date": "2011-12-09",
+  "has_data": true,
+  "order_count": 44,
+  "revenue": 198114.26,
+  "units_sold": 93968,
+  "unique_customers": 35,
+  "aov": 4502.6,
+  "return_count": 5,
+  "return_value": 168789.07,
+  "top_products": [
+    {
+      "product": "PAPER CRAFT , LITTLE BIRDIE",
+      "revenue": 168469.6
+    },
+    {
+      "product": "BLACK RECORD COVER FRAME",
+      "revenue": 669.57
+    },
+    {
+      "product": "PAPER CHAIN KIT 50'S CHRISTMAS",
+      "revenue": 591.9
+    },
+    {
+      "product": "RABBIT NIGHT LIGHT",
+      "revenue": 571.41
+    },
+    {
+      "product": "HOT WATER BOTTLE TEA AND SYMPATHY",
+      "revenue": 538.56
+    }
+  ],
+  "comparisons": {
+    "wow": {
+      "reference_date": "2011-12-02",
+      "reference_available": true,
+      "revenue_pct_change": 253.1,
+      "order_count_pct_change": -63.3
+    },
+    "mom": {
+      "reference_date": "2011-11-09",
+      "reference_available": true,
+      "revenue_pct_change": 204.3,
+      "order_count_pct_change": -63.0
+    }
+  }
+}

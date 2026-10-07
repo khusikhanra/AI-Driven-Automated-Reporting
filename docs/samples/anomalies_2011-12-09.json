@@ -1,0 +1,21 @@
+{
+  "date": "2011-12-09",
+  "has_data": true,
+  "median_order_value": 317.38,
+  "concentration_risk": {
+    "flagged": true,
+    "product": "PAPER CRAFT , LITTLE BIRDIE",
+    "revenue": 168469.6,
+    "pct_of_day_revenue": 85.0
+  },
+  "statistical_anomalies": [
+    {
+      "metric": "revenue",
+      "value": 198114.26,
+      "baseline_median": 28523.36,
+      "robust_zscore": 12.87,
+      "direction": "above"
+    }
+  ],
+  "insufficient_history": false
+}

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 720" width="1180" height="720" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#374151"/></marker></defs>
+<rect width="1180" height="720" fill="#ffffff"/>
+<text x="30" y="36" font-size="20" font-weight="700" fill="#111827">Automated Daily Sales Reporting Pipeline - Architecture</text>
+<rect x="20" y="56" width="1140" height="150" rx="14" fill="#e0e7ff" fill-opacity="0.35" stroke="#d1d5db"/>
+<text x="36" y="80" font-size="13" font-weight="700" fill="#374151" letter-spacing="0.5">1  DATA ENGINEERING  (local, tested end to end)</text>
+<rect x="40" y="100" width="150" height="76" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="1.6"/>
+<text x="115.0" y="132.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">Raw dataset</text>
+<text x="115.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">UCI Online Retail .xlsx</text>
+<rect x="240" y="100" width="170" height="76" rx="10" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.6"/>
+<text x="325.0" y="132.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">clean.py</text>
+<text x="325.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">date repair, reconciliation</text>
+<rect x="460" y="100" width="170" height="76" rx="10" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.6"/>
+<text x="545.0" y="132.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">Cleaned Parquet</text>
+<text x="545.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">sales, returns, adjustments</text>
+<rect x="680" y="100" width="170" height="76" rx="10" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.6"/>
+<text x="765.0" y="132.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">partition.py</text>
+<text x="765.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">Hive-style daily partitions</text>
+<rect x="900" y="100" width="240" height="76" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="1.6"/>
+<text x="1020.0" y="132.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">Partitioned store</text>
+<text x="1020.0" y="150.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">year=/month=/day=/orders.parquet</text>
+<line x1="190" y1="138" x2="240" y2="138" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="410" y1="138" x2="460" y2="138" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="630" y1="138" x2="680" y2="138" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="850" y1="138" x2="900" y2="138" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="20" y="226" width="1140" height="150" rx="14" fill="#dcfce7" fill-opacity="0.35" stroke="#d1d5db"/>
+<text x="36" y="250" font-size="13" font-weight="700" fill="#374151" letter-spacing="0.5">2  SYNTHETIC DATA  (deterministic, seeded)</text>
+<rect x="40" y="270" width="190" height="76" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="135.0" y="302.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">Synthetic Profile v2.0</text>
+<text x="135.0" y="320.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">versioned + fingerprinted</text>
+<rect x="290" y="270" width="230" height="76" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="405.0" y="302.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">synthetic_generator.py</text>
+<text x="405.0" y="320.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">calendar, seeds, injected events</text>
+<rect x="580" y="270" width="200" height="76" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="680.0" y="302.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">clean() reuse</text>
+<text x="680.0" y="320.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">same rules as real history</text>
+<rect x="840" y="270" width="300" height="76" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="990.0" y="302.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">New partitions + manifest</text>
+<text x="990.0" y="320.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">seed, event, fingerprint, reconciliation</text>
+<line x1="230" y1="308" x2="290" y2="308" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="520" y1="308" x2="580" y2="308" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="780" y1="308" x2="840" y2="308" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M545,176 L545,232 L135,232 L135,270" fill="none" stroke="#16a34a" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="553" y="222" font-size="11" fill="#6b7280">profile is learned from the cleaned history</text>
+<rect x="20" y="396" width="1140" height="150" rx="14" fill="#fef3c7" fill-opacity="0.35" stroke="#d1d5db"/>
+<text x="36" y="420" font-size="13" font-weight="700" fill="#374151" letter-spacing="0.5">3  ANALYTICS, AI AND REPORTING</text>
+<rect x="40" y="440" width="170" height="76" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.6"/>
+<text x="125.0" y="472.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">DuckDB metrics</text>
+<text x="125.0" y="490.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">revenue, orders, WoW, returns</text>
+<rect x="260" y="440" width="170" height="76" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.6"/>
+<text x="345.0" y="472.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">History cache</text>
+<text x="345.0" y="490.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">incremental Parquet baseline</text>
+<rect x="480" y="440" width="190" height="76" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.6"/>
+<text x="575.0" y="472.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">Anomaly detection</text>
+<text x="575.0" y="490.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">robust z-score (MAD) + concentration</text>
+<rect x="720" y="440" width="200" height="76" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.6"/>
+<text x="820.0" y="472.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">Narrative (LLM)</text>
+<text x="820.0" y="490.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">mock default | Claude via tool use</text>
+<rect x="970" y="440" width="170" height="76" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.6"/>
+<text x="1055.0" y="472.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">HTML report + Slack</text>
+<text x="1055.0" y="490.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">charts, alerts, banner</text>
+<line x1="210" y1="478" x2="260" y2="478" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="430" y1="478" x2="480" y2="478" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="670" y1="478" x2="720" y2="478" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="920" y1="478" x2="970" y2="478" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="1020" y1="346" x2="1020" y2="430" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="1020" y1="430" x2="125" y2="430" stroke="#374151" stroke-width="1.8"/>
+<line x1="125" y1="430" x2="125" y2="440" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="20" y="566" width="1140" height="130" rx="14" fill="#f3f4f6" fill-opacity="0.35" stroke="#d1d5db"/>
+<text x="36" y="590" font-size="13" font-weight="700" fill="#374151" letter-spacing="0.5">4  AWS DEPLOYMENT  (designed and mock-tested with moto; not deployed)</text>
+<rect x="40" y="610" width="170" height="64" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="125.0" y="636.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">EventBridge</text>
+<text x="125.0" y="654.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">daily cron</text>
+<rect x="260" y="610" width="210" height="64" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="365.0" y="636.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">Lambda (container)</text>
+<text x="365.0" y="654.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">lambda_handler.py via ECR</text>
+<rect x="520" y="610" width="230" height="64" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="635.0" y="636.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">S3 state</text>
+<text x="635.0" y="654.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">partitions, profile, history, manifests, reports</text>
+<rect x="800" y="610" width="160" height="64" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="880.0" y="636.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">CloudWatch</text>
+<text x="880.0" y="654.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">structured JSON logs</text>
+<rect x="1000" y="610" width="140" height="64" rx="10" fill="#ffffff" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="1070.0" y="636.0" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="600" fill="#111827">Slack</text>
+<text x="1070.0" y="654.0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#4b5563">webhook alert</text>
+<line x1="210" y1="642" x2="260" y2="642" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="470" y1="642" x2="520" y2="642" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="750" y1="642" x2="800" y2="642" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="960" y1="642" x2="1000" y2="642" stroke="#374151" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="1030" y="392" font-size="11" fill="#6b7280">real + synthetic days</text>
+</svg>
