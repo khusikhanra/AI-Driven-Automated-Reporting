@@ -1,0 +1,16 @@
+# Local development and test dependencies, pinned to the versions this project
+# was built and tested against. For what actually ships to Lambda, see
+# requirements-lambda.txt (a deliberately smaller set - no boto3, no test tools).
+pandas==3.0.2
+pyarrow==25.0.1
+duckdb==1.5.5
+matplotlib==3.10.8
+numpy==2.4.3
+openpyxl==3.1.5   # only needed to read the raw Online Retail.xlsx in pipeline/clean.py
+anthropic==1.8.0
+boto3==1.43.103
+moto[s3]==5.2.3
+pytest==9.1.1
+python-dotenv==1.2.2   # loads a local .env (optional in Lambda)
+pyflakes==4.0.1        # static checks (CI)
+

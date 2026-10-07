@@ -1,0 +1,8 @@
+# Pinned to the versions the local test suite ran against.
+# boto3 is provided by the Lambda Python base image, so it is not listed here.
+pandas==3.0.2
+pyarrow==25.0.1
+duckdb==1.5.5
+matplotlib==3.10.8
+numpy==2.4.3
+anthropic==1.8.0

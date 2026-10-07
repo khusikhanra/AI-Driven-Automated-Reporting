@@ -1,0 +1,40 @@
+# Secrets - never commit real values. Copy .env.example to .env and fill it in.
+.env
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Data: large, derived, and regeneratable from pipeline/clean.py onward.
+# See data/README.md for how to obtain the raw dataset and rebuild everything.
+data/*
+!data/README.md
+
+# Generated reports (regeneratable via pipeline/run_report.py)
+reports/
+
+# Local scratch / packaging artifacts
+*.zip
+out.json
+trust.json
+s3policy.json
+sched-trust.json
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Tooling caches / logs
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
